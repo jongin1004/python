@@ -8,3 +8,11 @@ while i < len+2 :
 print(string)
 print("+" + input_line + "+")
 print(string)
+
+#최대한 리펙토링
+input_line = input()
+string = ""
+for i in range(0,len(input_line)+2) :
+    string += "+"
+print(string + "\n+" +
+input_line + "+\n" + string)
