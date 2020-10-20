@@ -1,27 +1,24 @@
 input_line = input().split(" ")
+result = 0
 
 if input_line[1] == "+" :
     if input_line[0] == "x" :
-        input_line[0] = int(input_line[4]) - int(input_line[2])
-        print(input_line[0])
+        result = int(input_line[4]) - int(input_line[2])
 
     elif input_line[2] == "x" :
-        input_line[2] = int(input_line[4]) - int(input_line[0])
-        print(input_line[2])
+        result = int(input_line[4]) - int(input_line[0])
 
     else :
-        input_line[4] = int(input_line[0]) + int(input_line[2])
-        print(input_line[4])
+        result = int(input_line[0]) + int(input_line[2])
 
 elif input_line[1] == "-" :
     if input_line[0] == "x" :
-        input_line[0] = int(input_line[4]) + int(input_line[2])
-        print(input_line[0])
+        result = int(input_line[4]) + int(input_line[2])
 
     elif input_line[2] == "x" :
-        input_line[2] = int(input_line[0]) - int(input_line[4])
-        print(input_line[2])
+        result = int(input_line[0]) - int(input_line[4])
 
     else :
-        input_line[4] = int(input_line[0]) - int(input_line[2])
-        print(input_line[4])
+        result = int(input_line[0]) - int(input_line[2])
+
+print(result)
