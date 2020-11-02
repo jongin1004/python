@@ -26,3 +26,36 @@ tongsinsa = {"011" : "SKT", "016" : "KT", "019" : "LGU", "010" : "NONE"}
 input_number = input("번호 입려해주세요")
 check = input_number[:2]
 print(tongsinsa[check])
+
+
+우편번호 = input("우편번호: ")
+우편번호 = 우편번호[:3]
+if 우편번호 in ["010", "011", "012"]:
+    print("강북구")
+elif 우편번호 in ["014", "015", "016"]:
+    print("도봉구")
+else:
+    print("노원구")
+
+
+주민번호 = input("주민등록번호: ")
+뒷자리 = 주민번호.split("-")[1]
+if 0 <= int(뒷자리[1:3]) <= 8:
+    print("서울입니다.")
+else:
+    print("서울이 아닙니다.")
+
+
+
+
+
+
+import requests
+btc = requests.get("https://api.bithumb.com/public/ticker/").json()['data']
+
+range_of_fluctuation = int(btc["max_price"]) - int(btc["min_price"])
+if (int(btc["opening_price"]) + range_of_fluctuation) > int(btc["max_price"]) :
+    print("up")
+
+else :
+    print("down")

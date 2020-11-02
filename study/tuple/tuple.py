@@ -21,3 +21,6 @@ print(a, b, c)
 #tuple(range()) min , max , 간격 으로 tuple생성
 data = tuple(range(2,100,2))
 print(data)
+
+list = list(range(2,100,2))
+print(list)
