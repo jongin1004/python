@@ -62,3 +62,5 @@ def print_5xn(str,str_num) :
         num += str_num
 
 print_5xn(string,3)
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
