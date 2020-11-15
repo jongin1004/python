@@ -36,3 +36,28 @@ print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 day = "2020-05-04"
 ret = datetime.datetime.strptime(day, "%Y-%m-%d")
 print(ret, type(ret))
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+#
+# import time
+#
+# while True:
+#     now = datetime.datetime.now()
+#     print(now)
+#     time.sleep(1)
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+import os
+ret = os.getcwd()
+print(ret, type(ret))
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+os.rename("D:/python/before.txt", "D:/python/after.txt")
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+import numpy
+for i in numpy.arange(0, 5, 0.1):
+    print(i)
