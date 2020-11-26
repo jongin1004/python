@@ -21,3 +21,7 @@ class User :
         self.index = User.member["name"].index(self.name)
         print("name : "+User.member["name"][self.index],
               "id : " + str(User.member["id"][self.index]))
+
+    def total_user_info(self) :
+        for i in User.member["id"] :
+            print(i)
