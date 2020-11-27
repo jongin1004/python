@@ -1,4 +1,5 @@
 import datetime
+import time
 
 class Facebook :
     def __init__(self, name) :
@@ -25,7 +26,7 @@ class Post :
     def __init__(self, text) :
         self.text = text
         now = datetime.datetime.now()
-        self.date = now.strftime('%H : %M')
+        self.date = now.strftime('%H:%M:%S')
         self.like = 0
 
     def get_text(self) :
@@ -58,21 +59,26 @@ u_1.add_posts(p_2)
 
 u_2 = Facebook("Lee")
 
-p_3 = Post("c")
+p_3 = Post("php good")
 for i in range(15):
     p_3.increase_like()
 u_2.add_posts(p_3)
+
+time.sleep(1)
 
 p_4 = Post("python good")
 for i in range(20):
     p_4.increase_like()
 u_2.add_posts(p_4)
 
-p_5 = Post("e")
+time.sleep(1)
+
+p_5 = Post("php fun")
 for i in range(25):
     p_5.increase_like()
 u_2.add_posts(p_5)
 
+time.sleep(1)
 ###################################
 
 u_3 = Facebook("Choi")
@@ -82,14 +88,18 @@ for i in range(30):
     p_6.increase_like()
 u_3.add_posts(p_6)
 
+time.sleep(1)
+
 p_7 = Post("python hard")
 for i in range(35):
     p_7.increase_like()
 u_3.add_posts(p_7)
 
 ###################################
+
 u_1.add_followees(u_2)
 u_1.add_followees(u_3)
+
 ###################################
 
 #u_1 의 이름
@@ -110,7 +120,7 @@ for i in u_1.get_followees() :
 
 print(count)
 print("@@@@@@@@@@@@@@@@@@")
-#u_1의 followee중, name이 "Choi"인 사람의 post들에 달린
+#u_1의 followee중, name이 "Choi"인 사람의 post들에 달린削減
 #like의 총 수를 print
 for i in u_1.get_followees() :
     if i.get_name() == "Choi" :
@@ -140,3 +150,30 @@ for followee in u_1.get_followees() :
     for post in posts :
         if "python" in post.get_text() :
             print("user : " +followee.get_name(),"text : "+ post.get_text())
+
+
+print("@@@@@@@@@@@@@@@@@@")
+follow_posts = []
+for followee in u_1.get_followees() :
+    posts = followee.get_posts()
+    for post in posts :
+        follow_posts.append(post)
+
+post_time = int(follow_posts[0].get_date()[6:])
+post_time2 = int(follow_posts[0+1].get_date()[6:])
+
+count = len(follow_posts)
+for i in range(count-1) :
+    for j in range(count-1-i) :
+        post_time = int(follow_posts[j].get_date()[6:])
+        post_time2 = int(follow_posts[j+1].get_date()[6:])
+        if post_time < post_time2 :
+            follow_posts[j], follow_posts[j+1] = follow_posts[j+1], follow_posts[j]
+
+for post in follow_posts :
+    print(post.get_text())
+
+print("@@@@@@@@@@@@@@@@@@")
+
+for i in range(0,3) :
+    print(follow_posts[i].get_text())
