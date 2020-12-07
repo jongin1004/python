@@ -177,3 +177,5 @@ print("@@@@@@@@@@@@@@@@@@")
 
 for i in range(0,3) :
     print(follow_posts[i].get_text())
+
+print("@@@@@@@@@@@@@@@@@@")
