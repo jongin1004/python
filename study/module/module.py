@@ -38,13 +38,13 @@ ret = datetime.datetime.strptime(day, "%Y-%m-%d")
 print(ret, type(ret))
 
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-#
-# import time
-#
-# while True:
-#     now = datetime.datetime.now()
-#     print(now)
-#     time.sleep(1)
+
+import time
+
+while True:
+    now = datetime.datetime.now()
+    print(now)
+    time.sleep(1)
 
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 
