@@ -47,10 +47,10 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         Flyable.__init__(self, flying_speed)
 
     def move(self, location):
-      print("[공중 유닛 이동]")
-      self.fly(self.name, location)
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
 
- 
+
 # 벌쳐 : 지상유닛 , 기동성 좋음
 vulture = AttackUnit("벌쳐", 80, 10, 20)
 
