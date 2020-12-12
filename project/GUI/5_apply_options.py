@@ -145,7 +145,12 @@ def start():
         return  # 더이상 동작하면 안되니까 빠져나가기 위함
 
     # 이미지 통합 작업
-    merge_image()
+    try:
+        merge_image()
+    # 원인 불명에 대한 에러에 대해서도 전부 처리해주기 위해서 통합적인
+    # Execption으로 예외처리
+    except Exception as err:
+        msgbox.showerror("에러", err)
 
 
 # 파일 프레임 (파일 추가, 선택 삭제)
@@ -215,7 +220,7 @@ cmb_space.pack(side="left", padx=5, pady=5)
 
 # 3. 파일 포멧 옵션
 # 파일 포멧 레이블
-lbl_foramt = Label(frame_option, text="간격", width=8)
+lbl_foramt = Label(frame_option, text="포멧", width=8)
 lbl_foramt.pack(side="left", padx=5, pady=5)
 
 # 파일 포멧 콤보
