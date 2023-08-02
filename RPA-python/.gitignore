@@ -1,3 +1,5 @@
 images/*
 files/*
 config.*
+*.zip
+*.csv
